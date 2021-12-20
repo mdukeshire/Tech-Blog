@@ -1,8 +1,8 @@
 :root {
-  --primary: #3d5852;
-  --secondary: #86938f;
-  --tertiary: #5e877f;
-  --quatrinary: #6c6b67;
+  --primary: #023436;
+  --secondary: #037971;
+  --tertiary: #049A8F;
+  --quatrinary: #03B5AA;
   --light: #e3e4e3;
   --dark: #182c23;
   --error: rgb(228, 46, 1);
@@ -105,10 +105,8 @@ img {
   font-weight: bold;
 }
 
-/* CARDS */
+
 .card {
-  margin: 20px;
-  /* flex: 0 1 300px; */
   border: 7px double var(--dark);
   border-radius: 10px;
   background-color: var(--light);
@@ -155,7 +153,6 @@ img {
   padding-left: 100px;
 }
 
-/* LAYOUT */
 .container {
   display: flex;
   flex-flow: column wrap;

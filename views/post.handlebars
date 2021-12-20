@@ -1,13 +1,42 @@
-<h2>Create a new post!</h2>
+<section class="container">
+  {{#if ownership }}
+  <form class="post-delete">
+    <button id="post-delete">DELETE</button>
+  </form>
+  {{/if}}
+  {{#if loggedIn}}
+  <section class="flex-row justify-center">
+    <section class="card">
+      <div class="card-body">
+        <h1>{{post.title}}</h1>
+        <p>------------</p>
+        <h5>{{post.user.username}}'s post</h5>
+        <p>{{post.content}}</p>
+        {{#each post.comments as |comment|}}
+        <p>------------</p>
+        {{comments.user.username}}
+        {{> comment-details}}
+        {{/each}}
+      </div>
+    </section>
+  </section>
+</section>
+<section class="container">
+  <form class="form comment-form">
+    <div class="form-group">
+      <h3>New Comment:</h3>
+      <h6>Enter Title</h6>
+      <input id="comment-title" />
+      <h6>Enter Content</h6>
+      <textarea id="comment-content"></textarea>
+      <br />
+      <button id="comment-submit">Submit</button>
+      <script src="/js/new-comment.js"></script>
+      <script src="/js/delete-post.js"></script>
+    </div>
+  </form>
+</section>
 
-<form id="form-group">
-    <div class="form-group">
-        <label for="exampleFormControlInput1">Post Title</label>
-        <input type="title" class="form-control" id="exampleFormControlInput1" placeholder="JavaScript">
-    </div>
-    <div class="form-group">
-        <label for="exampleFormControlTextarea1">Write what's on your mind!</label>
-        <textarea type="body"class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+{{else}}
+<a href="/login">You must login</a>
+{{/if}}
